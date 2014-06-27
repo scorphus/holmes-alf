@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# This file is part of holmesalf.
+# https://github.com/holmes-app/holmes-alf
+
+# Licensed under the MIT license:
+# http://www.opensource.org/licenses/MIT-license
+# Copyright (c) 2014 Pablo Aguiar scorphus@gmail.com
+
 from mock import Mock, patch
 from preggy import expect
-from unittest import TestCase
+from tests.base import TestCase
 
 from holmesalf import BaseAuthNZWrapper
-from holmesalf import AlfAuthNZWrapper
+from holmesalf.wrapper import AlfAuthNZWrapper
 
 
 class TestBaseAuthNZWrapper(TestCase):
@@ -38,7 +45,7 @@ class TestAlfAuthNZWrapper(TestCase):
         expect(wrapper._sync_client).to_be_null()
         expect(wrapper._async_client).to_be_null()
 
-    @patch('holmesalf.AlfSyncClient')
+    @patch('holmesalf.wrapper.AlfSyncClient')
     def test_instantiates_sync_client(self, alf_sync_cli_mock):
         wrapper = AlfAuthNZWrapper(config=self.config)
 
@@ -52,7 +59,7 @@ class TestAlfAuthNZWrapper(TestCase):
         expect(wrapper._sync_client).not_to_be_null()
         expect(wrapper._sync_client).to_equal(sync_cli)
 
-    @patch('holmesalf.AlfSyncClient')
+    @patch('holmesalf.wrapper.AlfSyncClient')
     def test_does_not_reinstantiate_sync_client(self, alf_sync_cli_mock):
         wrapper = AlfAuthNZWrapper(config=self.config)
 
@@ -72,7 +79,7 @@ class TestAlfAuthNZWrapper(TestCase):
         expect(wrapper._sync_client).not_to_be_null()
         expect(wrapper._sync_client).to_equal(sync_cli)
 
-    @patch('holmesalf.AlfAsyncClient')
+    @patch('holmesalf.wrapper.AlfAsyncClient')
     def test_instantiates_async_client(self, alf_async_cli_mock):
         wrapper = AlfAuthNZWrapper(config=self.config)
 
@@ -86,7 +93,7 @@ class TestAlfAuthNZWrapper(TestCase):
         expect(wrapper._async_client).not_to_be_null()
         expect(wrapper._async_client).to_equal(async_cli)
 
-    @patch('holmesalf.AlfAsyncClient')
+    @patch('holmesalf.wrapper.AlfAsyncClient')
     def test_does_not_reinstantiate_async_client(self, alf_async_cli_mock):
         wrapper = AlfAuthNZWrapper(config=self.config)
 

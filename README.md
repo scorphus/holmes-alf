@@ -21,7 +21,7 @@ Usage
 Set the following config variables:
 
 ```conf
-AUTHNZ_WRAPPER = 'holmesalf.AlfAuthNZWrapper'
+AUTHNZ_WRAPPER = 'holmesalf.wrapper.AlfAuthNZWrapper'
 
 OAUTH_TOKEN_ENDPOINT = 'https://oauth-service.com/token-endpoint'
 OAUTH_CLIENT_ID = 'client-id'
@@ -32,7 +32,7 @@ Next, you have a sync and an async client at your disposal:
 
 ```python
 ipdb> type(self.application.authnz_wrapper)
-<class 'holmesalf.AlfAuthNZWrapper'>
+<class 'holmesalf.wrapper.AlfAuthNZWrapper'>
 ipdb> type(self.application.authnz_wrapper.sync_client)
 <class 'alf.client.Client'>
 ipdb> type(self.application.authnz_wrapper.async_client)

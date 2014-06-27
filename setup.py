@@ -46,17 +46,15 @@ holmes-alf is a wrapper for OAuth 2 synchronous (based on alf) and asynchronous 
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
     ],
-    packages=find_packages(
-        exclude=(
-            'tests',
-        ),
-    ),
+    packages=find_packages(),
     include_package_data=False,
     install_requires=[
         'alf>=0.4.1',
         'tornado-alf>=0.3.1'
     ],
-    extras_require={},
+    extras_require={
+        'tests': tests_require,
+    },
     entry_points={
         'console_scripts': [
             # add cli scripts here in this form:

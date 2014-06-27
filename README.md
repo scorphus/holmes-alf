@@ -1,13 +1,11 @@
-holmes-alf
-===========
+# holmes-alf [![Build Status](https://secure.travis-ci.org/scorphus/holmes-alf.png?branch=master)](https://travis-ci.org/scorphus/holmes-alf)
 
-Holmes OAuth 2 Sync/Async Clients Wrapper
------------------------------------------
+
+## Holmes OAuth 2 Sync/Async Clients Wrapper
 
 holmes-alf is a wrapper for OAuth 2 synchronous (based on [alf](https://github.com/globocom/alf)) and asynchronous (based on the [tornado-alf](https://github.com/globocom/tornado-alf)) clients that can bu used in [holmes](https://github.com/holmes-app/holmes-api).
 
-Features
---------
+## Features
 
 The following features are supported by both [alf](https://github.com/globocom/alf) and [tornado-alf](https://github.com/globocom/tornado-alf):
 
@@ -15,8 +13,7 @@ The following features are supported by both [alf](https://github.com/globocom/a
 * Token expiration control
 * Automatic retry on status 401 (UNAUTHORIZED)
 
-Usage
------
+## Usage
 
 Set the following config variables:
 
@@ -39,7 +36,6 @@ ipdb> type(self.application.authnz_wrapper.async_client)
 <class 'tornadoalf.client.Client'>
 ```
 
-License
--------
+## License
 
 MIT licensed.

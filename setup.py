@@ -50,7 +50,7 @@ holmes-alf is a wrapper for OAuth 2 synchronous (based on alf) and asynchronous 
     include_package_data=False,
     install_requires=[
         'alf>=0.4.1',
-        'tornado-alf>=0.3.1'
+        'tornado-alf>=0.3.3'
     ],
     extras_require={
         'tests': tests_require,
